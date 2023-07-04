@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <title>Date Night Planner</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="h1">Plan your date night!</h1>
+    </div>
+    <div>
+        <button id="startBtn">Start</button>
+    </div>
+
+    <div id="q1">
+        <h2>Do you want to go out or stay in?></h2>
+        <button id="outBtn">Go out</button>
+        <button id="inBtn">Stay in</button>
+    </div>
+
+    <!-- Go out questions -->
+    <div id="location">
+        <h2>What suburb are you currently in?></h2>
+        <form>
+            <input type="text" id="location-name" name="location-name">
+        </form>
+    </div>
+
+    <div id="radius">
+        <h2>How far are you willing to travel?></h2>
+        <button id="5km">5km</button>
+        <button id="10km">10km</button>
+        <button id="15km">15km</button>
+        <button id="20km">20+km</button>
+    </div>
+
+    <div id="price">
+        <h2>How much are you looking to spend?></h2>
+        <button id="price-low">$</button>
+        <button id="price-medium">$$</button>
+        <button id="price-high">$$$</button>
+    </div>
+
+    <div id="vibe">
+        <h2>What's your ideal vibe?></h2>
+        <button id="party">Party</button>
+        <button id="chatty">Chatty</button>
+        <button id="adventure">Adventurous</button>
+    </div>
+    <!-- End of go out questions -->
+
+    <div id="results"></div>
+    <div id="past-results"></div>
+</body>
+
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAELLLRlHlybGtB7QWBnN8G11d5vWc1eUA&libraries=places">
+    </script>
+
+<script src="./Assets/js/script.js"></script>
+
+</html>
