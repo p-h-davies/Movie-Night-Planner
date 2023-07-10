@@ -7,6 +7,7 @@ function renderDate() {
         responseArray = getResponse;
     }
     console.log(responseArray);
+    dateStore.style.display = 'inline';
     for (let index = 0; index < responseArray.length; index++) {
         const element = responseArray[index];
         var dateName = document.createElement('h3');

@@ -15,6 +15,7 @@ let pastResultsEl = document.querySelector("#past-results");
 let title = document.querySelector("#result-title")
 let titleName = document.querySelector("#result-title-display")
 let savedDatesBtn = document.querySelector("#saved-div")
+let dateStore = document.querySelector("#out-dates")
 
 
 //Start Page Display
@@ -30,6 +31,7 @@ questionEl.style.display = 'none';
 answerElA.style.display = 'none';
 answerElB.style.display = 'none';
 answerElC.style.display = 'none';
+dateStore.style.display = 'none';
 
 //First Question Display - "Go out or stay home"
 startEl.addEventListener("click", function () {
@@ -297,10 +299,10 @@ function showResults() {
 }
 
 
-let dateStore = document.querySelector("#out-dates")
 
 function renderDate() {
     console.log(responseArray);
+    dateStore.style.display = 'inline';
     for (let index = 0; index < responseArray.length; index++) {
         var getResponse = JSON.parse(localStorage.getItem("responses"));
         if (getResponse !== null) {
