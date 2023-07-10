@@ -265,10 +265,7 @@ function showResults() {
                             secondDiv.append(imgDiv)
                             imgDiv.appendChild(img)
                             secondDiv.append(newDiv)
-                            // resultsEl.append(imgDiv)
-                            // resultsEl.append(newDiv)
                             newDiv.id = 'div_' + issue.name;
-                            // imgDiv.appendChild(img)
                             newDiv.appendChild(nameDisplay)
                             newDiv.appendChild(locationDisplay)
                             newDiv.appendChild(ratingDisplay)
@@ -288,8 +285,8 @@ function showResults() {
                             }
                             console.log(responseArray)
                             saveBtn.addEventListener("click", function () {
-                                localStorage.setItem("responses", JSON.stringify(responseArray));
                                 responseArray.push(responses)
+                                localStorage.setItem("responses", JSON.stringify(responseArray));
                                 console.log(responseArray)
                             })
                         }
@@ -297,7 +294,14 @@ function showResults() {
             }
         })
 }
+function getDate() {
+    var getResponse = JSON.parse(localStorage.getItem("responses"));
+    if (getResponse !== null) {
+        responseArray = getResponse;
+    }
+}
 
+getDate()
 
 
 function renderDate() {
@@ -336,5 +340,7 @@ toDoStore.addEventListener("click", function () {
 });
 
 
-
-//need assistance with rendering local storage on index2.html, loads fine with pastResultsEl (on index 1) but as soon as i replace that with the index 2 div, code stops working
+//need to configure results page
+//need to add classes to result card, e.g. make title bold
+//align submit button
+//remove blocking words from form

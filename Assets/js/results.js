@@ -1,11 +1,17 @@
 
 let dateStore = document.querySelector("#out-dates")
 
-function renderDate() {
+function getDate() {
     var getResponse = JSON.parse(localStorage.getItem("responses"));
     if (getResponse !== null) {
         responseArray = getResponse;
     }
+}
+
+getDate()
+
+function renderDate() {
+    getDate()
     console.log(responseArray);
     dateStore.style.display = 'inline';
     for (let index = 0; index < responseArray.length; index++) {
