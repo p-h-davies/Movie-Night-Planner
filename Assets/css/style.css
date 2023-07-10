@@ -1,0 +1,209 @@
+/* * {
+    /* background-color: aliceblue; */
+/* } */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+#h1 {
+    font-size: 100px
+}
+
+#result-title-display {
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin: 0px 0px 30px;
+    background: white;
+}
+
+#result-title {
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0px 0px 30px;
+}
+
+#titles {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+}
+
+#start-div {
+    display: flex;
+    justify-content: center;
+}
+
+#saved-div {
+    display: flex;
+    justify-content: center;
+}
+
+#startBtn {
+    color: black;
+    background-color: white;
+    width: 200px;
+    height: 150px;
+    font-size: 30px;
+    position: relative;
+    top: 200px;
+}
+
+#to-do {
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 250px;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+}
+
+
+#q1 {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 300px
+}
+
+#q1-title {
+    display: flex;
+    justify-content: center;
+}
+
+#in-out {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 350px;
+}
+
+#outBtn {
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    display: inline;
+    width: 200px;
+    margin: 100px;
+    height: 80px;
+    font-size: large;
+}
+
+
+#inBtn {
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    display: inline;
+    width: 200px;
+    margin: 100px;
+    height: 80px;
+    font-size: large;
+}
+
+#location {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 300px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#location-title {
+    font-size: 40px;
+    margin: 0px 0px 50px;
+}
+
+#location-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#form-block {
+    width: 800px;
+}
+
+#submit {
+    color: black
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 400px;
+}
+
+#question {
+    font-size: 40px
+}
+
+#answerA,
+#answerB,
+#answerC {
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 100px;
+    height: 80px;
+    font-size: large;
+}
+
+#answer-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.date-result-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+#results {
+    position: relative;
+    top: 300px;
+    background: white;
+    width: 100vw;
+    padding: 50px;
+}
+
+.save {
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding: 20px;
+}
+
+.img-div {
+    display: flex;
+    justify-content: center;
+}
