@@ -58,6 +58,8 @@ goOut.addEventListener("click", function () {
 })
 
 
+
+
 //"Go out" questions list
 let questionsList = [
     { title: "How far are you willing to travel?", answerA: "0-10km", answerB: "10-15km", answerC: "15+km" },
@@ -252,20 +254,27 @@ function showResults() {
                             var imgDiv = document.createElement('div');
                             newDiv.classList.add("date-result-card")
                             imgDiv.classList.add("img-div")
+                            var secondDiv = document.createElement('div');
                             var saveBtn = document.createElement('button');
                             saveBtn.textContent = "Save to your To Do List"
                             saveBtn.classList.add("save")
                             saveBtn.id = 'btn_' + issue.name
-                            resultsEl.append(imgDiv)
-                            resultsEl.append(newDiv)
-                            newDiv.id = 'div_' + issue.name;
+                            resultsEl.append(secondDiv)
+                            secondDiv.append(imgDiv)
                             imgDiv.appendChild(img)
+                            secondDiv.append(newDiv)
+                            // resultsEl.append(imgDiv)
+                            // resultsEl.append(newDiv)
+                            newDiv.id = 'div_' + issue.name;
+                            // imgDiv.appendChild(img)
                             newDiv.appendChild(nameDisplay)
                             newDiv.appendChild(locationDisplay)
                             newDiv.appendChild(ratingDisplay)
                             newDiv.appendChild(priceDisplay)
-                            newDiv.appendChild(saveBtn)
-                            console.log(img)
+                            var submitDiv = document.createElement('div');
+                            secondDiv.append(submitDiv);
+                            submitDiv.classList.add("submit-button")
+                            submitDiv.appendChild(saveBtn);
 
                             //saving Fetch results into local storage
                             let responses = {
@@ -275,7 +284,7 @@ function showResults() {
                                 Rating: ratingDisplay.outerText,
                                 Price: priceDisplay.outerText
                             }
-
+                            console.log(responseArray)
                             saveBtn.addEventListener("click", function () {
                                 localStorage.setItem("responses", JSON.stringify(responseArray));
                                 responseArray.push(responses)
@@ -288,21 +297,15 @@ function showResults() {
 }
 
 
-//Get from Local Storage
-function getDate() {
-    var getResponse = JSON.parse(localStorage.getItem("responses"));
-    if (getResponse !== null) {
-        responseArray = getResponse;
-    }
-}
-
-getDate()
-
-//Render Saved Dates Function
 let dateStore = document.querySelector("#out-dates")
 
 function renderDate() {
+    console.log(responseArray);
     for (let index = 0; index < responseArray.length; index++) {
+        var getResponse = JSON.parse(localStorage.getItem("responses"));
+        if (getResponse !== null) {
+            responseArray = getResponse;
+        }
         const element = responseArray[index];
         var dateName = document.createElement('h3');
         dateName.innerText = "Date: " + element.Name
@@ -314,19 +317,20 @@ function renderDate() {
         datePricing.innerText = "Pricing: " + element.Pricing
         var dateImg = document.createElement('img');
         dateImg.src = element.Photo;
-        var dateCard = document.createElement('div');
-        pastResultsEl.append(dateName)
-        pastResultsEl.append(dateLocation)
-        pastResultsEl.append(dateImg)
+        dateStore.append(dateName)
+        dateStore.append(dateLocation)
+        dateStore.append(dateImg)
     }
+    console.log("Hi")
 }
+
 
 
 //Render Saved Dates on Click
 let toDoStore = document.querySelector("#to-do")
 toDoStore.addEventListener("click", function () {
-    renderDate();
-    // document.location = "./To-Do.html"
+    renderDate()
+    document.location = "./To-Do.html";
 });
 
 
