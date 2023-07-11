@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinner Recommendation</title>
+  <link href="https://cdn.tailwindcss.com/2.2.7/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="Assets/css/dinner.css">
+</head>
+<body>
+  <div class="container mx-auto px-4 py-8">
+    <header>
+      <h1 class="text-3xl font-bold mb-4">Dinner Recommendation</h1>
+    </header>
+
+    <section class="py-8">
+      <h2 class="text-2xl font-bold mb-4">Enter the ingredients you have:</h2>
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <input id="ingredientInput" class="w-full py-2 px-4 border border-gray-400 rounded mb-4" type="text" placeholder="Enter ingredients separated by commas">
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3">
+          <button id="recommendButton" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Recommend</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 hidden" id="resultSection">
+      <div class="flex flex-wrap" id="recipeResults"></div>
+    </section>
+  </div>
+
+  <script src="Assets/js/dinner.js"></script>
+</body>
+</html>
