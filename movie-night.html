@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css">
+    <link href="Assets/css/design.css" rel="stylesheet" type="text/css">
+    <link href="Assets/css/media.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <main>
+
+        <button id="btnModal" onclick="watchMovies()">Movies</button>
+
+        <!-- The Modal for movie selection of movies which type of you want -->
+        <div id="movieModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close movieModalClose">&times;</span>
+
+                <div class="movie-night-items">
+                    <span class="movie-night movie-night-1">Welcome</span>
+                    <span class="movie-night movie-night-2">To</span>
+                    <span class="movie-night movie-night-3">Movie</span>
+                    <span class="movie-night movie-night-4">Night</span>
+                </div>
+                <div class="input-group">
+                    <input type="radio" value="adventureMovie" name="movieCategory">
+                    <label>Would you like to watch Scary Movies?</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" value="entertainmentMovie" name="movieCategory">
+                    <label>would you like to watch entertainment Movies?</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" value="westernMovies" name="movieCategory">
+                    <label>Would you like to watch Western Movies</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" value="suspenseMovie" name="movieCategory">
+                    <label>Would you like to watch suspense Movie</label>
+                </div>
+            
+            </div>
+
+        </div>
+
+
+        <!-- Trailer show Modal -->
+        <div id="movieTrailerModal" class="modal">
+            <!-- Modal content -->
+        </div>
+
+
+        <!-- Movie thumbnail and title show -->
+
+        <div class="thumbnail">
+
+        </div>
+
+
+        <!-- Show previous Movie trailer   -->
+        <div class="movie-store-random">
+            <div class="movie-storage">
+                <h3> Watched List</h3>
+                <ol>
+
+                </ol>
+            </div>
+            <div class="movie-show"></div>
+        </div>
+    </main>
+</body>
+<script src="Assets/js/scriptName.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+</html>

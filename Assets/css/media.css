@@ -1,0 +1,129 @@
+@media screen and (min-width:200px) and (max-width:567px) {
+    #movieModal .modal-content {
+
+        width: 90%;
+    }
+
+    .movie-night {
+        font-size: 18px;
+    }
+
+    #movieModal .input-group {
+
+        font-size: 17px;
+    }
+
+    .thumbnail-inner {
+        flex-basis: 93%;
+        margin: 3%;
+    }
+
+    .movieTrailerModal .modal-content {
+        width: 90%;
+    }
+    .activites {
+        width: 90%;
+}
+.activites ul li {
+    padding: 25px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#h1 {
+    font-size: 30px;
+}
+.randomly-movie-inner {
+    flex-basis: 100%;
+    height: 300px;
+}
+#movieTrailerModal .modal-content {
+    width: 90%;
+}
+#movieTrailerModal h5 {
+    font-size: 20px;
+}
+.movie-store-random {
+
+    flex-direction: column;
+    
+}
+.movie-storage {
+   margin: 0px auto 30px auto;
+    width: 80%;
+}
+.movie-show {
+    padding: 0px 15px;
+}
+.movieModal .close {
+    width: 30px;
+    height: 30px;
+       line-height: 30px;
+}
+
+}
+@media screen and (min-width:568px) and (max-width:767px) {
+    #movieModal .modal-content {
+
+        width: 90%;
+    }
+
+    .movie-night {
+        font-size: 30px;
+    }
+
+    #movieModal .input-group {
+
+        font-size: 17px;
+    }
+
+    .thumbnail-inner {
+        flex-basis: 43%;
+        margin: 2%;
+    }
+
+    #movieTrailerModal .modal-content {
+        width: 75%;
+    }
+    .randomly-movie-inner {
+        flex-basis: 45%;
+}
+.movie-storage{
+    flex-basis: 25%;
+}
+.movie-show {
+    flex-basis: 70%;
+
+}
+.randomly-movie-inner {
+    flex-basis: 45%;
+}
+#movieTrailerModal h5 {
+    font-size: 24px;
+}
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    #movieModal .modal-content {
+
+        width: 90%;
+    }
+
+    .thumbnail-inner {
+        flex-basis: 31%;
+        margin: 1%;
+    }
+    #movieTrailerModal .modal-content {
+        width: 60%;
+    }
+    #movieTrailerModal h5 {
+        font-size: 20px;
+    }
+    .randomly-movie-inner h4 {
+      
+        font-size: 15px;
+    }
+    .movie-storage ol li {
+    
+        font-size: 13px
+    }
+}
