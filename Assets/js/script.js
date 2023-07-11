@@ -1,7 +1,11 @@
 let startEl = document.querySelector("#startBtn");
 let q1El = document.querySelector("#q1");
+let q2El = document.querySelector("#q2");
 let goOut = document.querySelector("#outBtn");
 let stayIn = document.querySelector("#inBtn");
+let movieNight = document.querySelector("#movie-night");
+let cocktailEl = document.querySelector("#cocktail");
+let dinnerEl = document.querySelector("#dinner");
 let locationEl = document.querySelector("#location");
 let locationField = document.querySelector("location-name");
 let submitEl = document.querySelector("#submit");
@@ -32,6 +36,10 @@ answerElA.style.display = 'none';
 answerElB.style.display = 'none';
 answerElC.style.display = 'none';
 dateStore.style.display = 'none';
+q2El.style.display = 'none';
+movieNight.style.display = 'none';
+cocktailEl.style.display = 'none';
+dinnerEl.style.display = 'none';
 
 //First Question Display - "Go out or stay home"
 startEl.addEventListener("click", function () {
@@ -59,8 +67,23 @@ goOut.addEventListener("click", function () {
 
 })
 
+stayIn.addEventListener("click", function () {
+    titleName.style.display = 'none';
+    resultsEl.style.display = 'none';
+    startEl.style.display = 'none';
+    savedDatesBtn.style.display = 'none';
+    q1El.style.display = 'none';
+    goOut.style.display = 'none';
+    stayIn.style.display = 'none';
+    q2El.style.display = 'inline';
+    movieNight.style.display = 'inline';
+    cocktailEl.style.display = 'inline';
+    dinnerEl.style.display = 'inline';
+})
 
-
+movieNight.addEventListener("click", function () {
+    document.location = "./movie-night.html"
+})
 
 //"Go out" questions list
 let questionsList = [
@@ -344,3 +367,4 @@ toDoStore.addEventListener("click", function () {
 //need to add classes to result card, e.g. make title bold
 //align submit button
 //remove blocking words from form
+//if no location results...
