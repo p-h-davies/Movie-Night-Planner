@@ -19,6 +19,7 @@ let pastResultsEl = document.querySelector("#past-results");
 let title = document.querySelector("#result-title")
 let titleName = document.querySelector("#result-title-display")
 let savedDatesBtn = document.querySelector("#saved-div")
+let toDo = document.querySelector("#to-do")
 let dateStore = document.querySelector("#out-dates")
 
 
@@ -198,20 +199,20 @@ let responseArray = []
 function showResults() {
     titleName.style.display = 'flex';
     resultsEl.style.display = 'inline';
+    toDo.classList.add("button-end")
     savedDatesBtn.style.display = 'flex'
 
     //Date Night Results Title
-    //append title with h2 class - you got bar!
     if (userVibe == "tourist_attraction") {
-        titleName.append("Explore a tourist attraction!")
+        titleName.append("Congratulations! Your date night is: Explore a tourist attraction!")
         title.append("Go explore the local tourist attractions! Learn something about your city and learn about your love interest. We've listed the best tourist attractions near you below:")
     }
     if (userVibe == "bar") {
-        titleName.append("Hit up a local bar!")
+        titleName.append("Congratulations! Your date night is: Hit up a local bar!")
         title.append("Where else can you drink without judgement and get to know your date? Honestly, we can't believe you didn't already think of this! We've listed the best bars near you below:")
     }
     if (userVibe == "cafe") {
-        titleName.append("Sip & chat in a cafe!")
+        titleName.append("Congratulations! Your date night is: Sip & chat in a cafe!")
         title.append("Bathe in the sunshine in the outdoor area, or cosy up together with hot coffee in hand. A cafe is the ultimate date spot for the day time, and maybe a walk in the park afterwards? We've listed the best tourist attractions near you below:")
     }
 
@@ -272,37 +273,42 @@ function showResults() {
                             const price = issue.price_level;
                             console.log(photoRef)
                             let photo = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&maxheight=400&photo_reference=" + photoRef + "&sensor=false&key=AIzaSyAELLLRlHlybGtB7QWBnN8G11d5vWc1eUA"
+
+                            //element creation
                             var img = document.createElement('img')
                             img.src = photo
                             var nameDisplay = document.createElement('ul');
-                            nameDisplay.innerText = " Name: " + name;
+                            nameDisplay.innerText = name;
+                            nameDisplay.classList.add("location-title")
                             var locationDisplay = document.createElement('ul');
                             locationDisplay.innerText = "Location: " + location;
+                            locationDisplay.classList.add("location-address")
                             var ratingDisplay = document.createElement('ul');
                             ratingDisplay.innerText = "Rating= " + rating;
+                            ratingDisplay.classList.add("location-rating")
                             var priceDisplay = document.createElement('ul');
                             priceDisplay.innerText = "Price: 1-5 (1 being most affordable)= " + price;
-                            var newDiv = document.createElement('div');
+                            priceDisplay.classList.add("location-price")
                             var imgDiv = document.createElement('div');
-                            newDiv.classList.add("date-result-card")
                             imgDiv.classList.add("img-div")
-                            var secondDiv = document.createElement('div');
-                            secondDiv.classList.add("card-whole")
+                            var cardDiv = document.createElement('div');
+                            cardDiv.id = 'div_' + issue.name;
+                            cardDiv.classList.add("card-whole")
                             var saveBtn = document.createElement('button');
                             saveBtn.textContent = "Save to your To Do List"
                             saveBtn.classList.add("save")
                             saveBtn.id = 'btn_' + issue.name
-                            resultsEl.append(secondDiv)
-                            secondDiv.append(imgDiv)
+
+                            //element appending
+                            resultsEl.append(cardDiv)
+                            cardDiv.appendChild(nameDisplay)
+                            cardDiv.append(imgDiv)
                             imgDiv.appendChild(img)
-                            secondDiv.append(newDiv)
-                            newDiv.id = 'div_' + issue.name;
-                            newDiv.appendChild(nameDisplay)
-                            newDiv.appendChild(locationDisplay)
-                            newDiv.appendChild(ratingDisplay)
-                            newDiv.appendChild(priceDisplay)
+                            cardDiv.appendChild(locationDisplay)
+                            cardDiv.appendChild(ratingDisplay)
+                            cardDiv.appendChild(priceDisplay)
                             var submitDiv = document.createElement('div');
-                            secondDiv.append(submitDiv);
+                            cardDiv.append(submitDiv);
                             submitDiv.classList.add("submit-button")
                             submitDiv.appendChild(saveBtn);
 
@@ -358,7 +364,6 @@ function renderDate() {
         dateStore.append(dateLocation)
         dateStore.append(dateImg)
     }
-    console.log("Hi")
 }
 
 
@@ -370,6 +375,3 @@ toDoStore.addEventListener("click", function () {
     document.location = "./To-Do.html";
 });
 
-
-//need to add classes to result card, e.g. make title bold
-//if no location results...

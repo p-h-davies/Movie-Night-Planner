@@ -10,26 +10,39 @@ body {
 }
 
 #h1 {
-    font-size: 100px
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
 }
 
 #result-title-display {
-    position: relative;
-    top: 200px;
     display: flex;
     justify-content: center;
-    font-size: 50px;
-    margin: 0px 0px 30px;
-    background: white;
+    padding: 50px;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
 }
 
 #result-title {
-    position: relative;
-    top: 200px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 10px;
+    color: #585858;
     display: flex;
     justify-content: center;
-    font-size: 30px;
-    margin: 0px 0px 30px;
+    position: relative;
+    top: 50px;
 }
 
 #titles {
@@ -65,17 +78,22 @@ body {
 }
 
 #to-do {
-    color: black;
-    background-color: white;
+
     display: flex;
     justify-content: center;
     position: relative;
-    top: 250px;
-    width: 200px;
-    height: 50px;
-    align-items: center;
+    top: 300px;
+    padding: 10px 20px;
+    background-color: #4f46ec;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
+.button-end {
+    top: 70px !important
+}
 
 #q1 {
     font-size: 30px;
@@ -201,6 +219,18 @@ body {
     align-items: stretch;
 }
 
+#number-form {
+    border: 2px solid aliceblue;
+}
+
+#street-form {
+    border: 2px solid aliceblue;
+}
+
+#city-form {
+    border: 2px solid aliceblue;
+}
+
 #form-block {
     width: 800px;
 }
@@ -254,18 +284,37 @@ body {
 
 #results {
     position: relative;
-    top: 300px;
-    background: white;
-    width: 100vw;
+    top: 100px;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.save {
-    border-radius: 15px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-    padding: 20px;
+
+.card-whole {
+    padding: 20px 0px 20px;
+    background: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+}
+
+ul {
+    padding: 15px;
+}
+
+.location-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 .img-div {
@@ -273,24 +322,29 @@ body {
     justify-content: center;
 }
 
-.card-whole {
-    padding: 0px 0px 50px;
+.location-address {
+    padding: 15px 0px 10px;
 }
 
-#number-form {
-    border: 2px solid aliceblue;
+.location-rating,
+.location-price {
+    padding: 10px;
 }
 
-#street-form {
-    border: 2px solid aliceblue;
+.save {
+    padding: 10px 20px;
+    background-color: #4f46ec;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-#city-form {
-    border: 2px solid aliceblue;
-}
+
 
 .error {
     display: flex;
     font-size: 20px;
     justify-content: center;
+    background: white;
 }
