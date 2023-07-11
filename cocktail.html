@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,33 @@
   <link href="https://cdn.tailwindcss.com" rel="stylesheet">
   <link rel="stylesheet" href="Assets/css/cocktail.css">
 </head>
+
 <body>
+  <h1>Plan your date night!</h1>
+  <h2 id="result-title">Congratulations! Your date night is: Making Cocktails Together</h2>
+  <p id="blurb">This is our favourite date night option (...don't tell the other options)! Kick back, get to know each
+    other and
+    channel your inner bartender. Pop the ingredients you have at hand in the search bar below and we'll show you some
+    recipes to get you started!</p>
+  <div id="saved-div">
+    <button id="to-do" type="button" data-te-ripple-init data-te-ripple-color="light"
+      class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+      See your Saved Dates
+    </button>
+
+  </div>
   <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-4">Cocktail Search</h1>
+    <h2 class="text-3xl font-bold mb-4">Cocktail Search</h2>
     <p class="mb-2">Enter the ingredients you have, separated by commas:</p>
-    <input type="text" id="ingredients" class="border border-gray-400 rounded py-2 px-4 mb-4" placeholder="E.g., lime, vodka">
-    <button id="searchButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Search</button>
+    <input type="text" id="ingredients" class="border border-gray-400 rounded py-2 px-4 mb-4"
+      placeholder="E.g., lime, vodka">
+    <button id="searchButton"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Search</button>
     <p class="error-message text-red-500 mt-2 hidden" id="errorMessage"></p>
     <div id="cocktailResults"></div>
   </div>
 
   <script src="Assets/js/cocktail.js"></script>
 </body>
+
 </html>
