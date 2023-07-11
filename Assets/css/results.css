@@ -1,0 +1,25 @@
+#main-title {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+}
+
+#blurb {
+    font-size: large;
+    position: relative;
+    top: 110px;
+}
+
+#dates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: 200px;
+}
+
+#out-title {
+    font-size: 30px;
+}

@@ -66,7 +66,7 @@ goOut.addEventListener("click", function () {
     submitEl.style.display = 'inline'
 
 })
-
+//If "Stay In" is selected
 stayIn.addEventListener("click", function () {
     titleName.style.display = 'none';
     resultsEl.style.display = 'none';
@@ -81,6 +81,7 @@ stayIn.addEventListener("click", function () {
     dinnerEl.style.display = 'inline';
 })
 
+//If "Cosy Up" is selected
 movieNight.addEventListener("click", function () {
     document.location = "./movie-night.html"
 })
@@ -239,7 +240,13 @@ function showResults() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            console.log(data.status);
+            if (data.status == 'ZERO_RESULTS') {
+                let error = document.createElement('h2')
+                error.classList.add("error")
+                error.textContent = "Sorry, we didn't find anything matching this description near you. Either try the quiz again or go on a hunt for a location that fits this description yourself!"
+                resultsEl.append(error)
+            }
             for (const issue of data.results) {
                 const latitude = issue.geometry.location.lat
                 console.log(latitude)
@@ -270,7 +277,7 @@ function showResults() {
                             var nameDisplay = document.createElement('ul');
                             nameDisplay.innerText = " Name: " + name;
                             var locationDisplay = document.createElement('ul');
-                            locationDisplay.innerText = "Location =" + location;
+                            locationDisplay.innerText = "Location: " + location;
                             var ratingDisplay = document.createElement('ul');
                             ratingDisplay.innerText = "Rating= " + rating;
                             var priceDisplay = document.createElement('ul');
@@ -280,6 +287,7 @@ function showResults() {
                             newDiv.classList.add("date-result-card")
                             imgDiv.classList.add("img-div")
                             var secondDiv = document.createElement('div');
+                            secondDiv.classList.add("card-whole")
                             var saveBtn = document.createElement('button');
                             saveBtn.textContent = "Save to your To Do List"
                             saveBtn.classList.add("save")
@@ -363,8 +371,5 @@ toDoStore.addEventListener("click", function () {
 });
 
 
-//need to configure results page
 //need to add classes to result card, e.g. make title bold
-//align submit button
-//remove blocking words from form
 //if no location results...

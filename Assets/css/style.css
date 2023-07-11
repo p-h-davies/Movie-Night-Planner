@@ -209,6 +209,11 @@ body {
     color: black
 }
 
+.submit-button {
+    display: flex;
+    justify-content: center;
+}
+
 .quiz-container {
     display: flex;
     flex-direction: column;
@@ -243,6 +248,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 30px;
 
 }
 
@@ -264,5 +270,27 @@ body {
 
 .img-div {
     display: flex;
+    justify-content: center;
+}
+
+.card-whole {
+    padding: 0px 0px 50px;
+}
+
+#number-form {
+    border: 2px solid aliceblue;
+}
+
+#street-form {
+    border: 2px solid aliceblue;
+}
+
+#city-form {
+    border: 2px solid aliceblue;
+}
+
+.error {
+    display: flex;
+    font-size: 20px;
     justify-content: center;
 }
