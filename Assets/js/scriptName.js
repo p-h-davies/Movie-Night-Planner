@@ -1,7 +1,7 @@
 
 // Get the modal for when user click on movie night button then pop up for selection
 let movieModal = document.querySelector("#movieModal");
-let movieStorageData=document.querySelector(".movie-storage")
+let movieStorageData = document.querySelector(".movie-storage")
 // Get the button that opens the modal
 let btnModal = document.getElementById("btnModal");
 
@@ -11,8 +11,8 @@ let movieCloseBtn = document.querySelector(".movieModalClose");
 // When the user clicks the button, open the modal 
 btnModal.addEventListener("click", () => {
     movieModal.style.display = "block"
-    btnModal.style.display="none"
-    movieStorageData.style.display="none"
+    btnModal.style.display = "none"
+    movieStorageData.style.display = "none"
 
 })
 // When the user clicks on <span> (x), close the modal
@@ -103,18 +103,18 @@ let watchMovies = (mtype = '') => {
 
 
 //just randomly data show in movie night page only 6 movie data show
-let movieShow=document.querySelector(".movie-show")
+let movieShow = document.querySelector(".movie-show")
 
-function showMovies(){
-    var k=5;
-const response1 = fetch(url, options).then(res => res.json()).then(data1 => {
-data1.forEach((v,i)=>{
-    if(k>=i){
-    movieShow.innerHTML+=`<div class="randomly-movie-inner"><h4>${v.title}</h4>
+function showMovies() {
+    var k = 5;
+    const response1 = fetch(url, options).then(res => res.json()).then(data1 => {
+        data1.forEach((v, i) => {
+            if (k >= i) {
+                movieShow.innerHTML += `<div class="randomly-movie-inner"><h4>${v.title}</h4>
     <img src="${v.image}" alt="${v.title}" title="${v.title}" onclick="trailerWatch('${v.trailer}')"></div>`
-    }
-})
-})
+            }
+        })
+    })
 }
 showMovies()
 
@@ -180,12 +180,12 @@ function movieTrailerClose() {
 
 //local storage data
 let movieStorage = document.querySelector(".movie-storage ol");
-let movieWatchList=document.querySelector(".movie-storage")
+let movieWatchList = document.querySelector(".movie-storage")
 function displayDataStorage() {
     movieStorage.innerHTML = ''
     movieGetLocalStorage = JSON.parse(localStorage.getItem("movie")) ?? []
     movieGetLocalStorage.forEach((value, i) => {
-        movieWatchList.style.display="block"
+        movieWatchList.style.display = "block"
         movieStorage.innerHTML += `<li>${value}<span onclick="deleteData(${i})"> <i class="fa fa-trash" aria-hidden="true"></i></span></li>`;
 
     })
@@ -203,12 +203,12 @@ function deleteData(index) {
     localStorage.setItem("movie", JSON.stringify(movieStorageLIstItem))
     displayDataStorage()
     $.toast({
-        text:"Data has been Delete!!",
+        text: "Data has been Delete!!",
         icon: 'error',
-        position : 'top-left' ,
-        hideAfter : 1000, 
-        showHideTransition : 'slide'
-      })
+        position: 'top-left',
+        hideAfter: 1000,
+        showHideTransition: 'slide'
+    })
 }
 
 
