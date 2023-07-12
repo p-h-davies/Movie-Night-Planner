@@ -1,25 +1,110 @@
-#main-title {
-    font-size: 60px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 100px;
-}
 
-#blurb {
-    font-size: large;
-    position: relative;
-    top: 110px;
-}
 
-#dates {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    top: 200px;
-}
 
-#out-title {
-    font-size: 30px;
-}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fafc;
+  }
+  
+
+  section {
+    padding: 2rem;
+  }
+  
+  h1,
+  h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #4f46e5;
+    margin-bottom: 1.5rem;
+  }
+  
+  #main-title {
+    text-align: center;
+  }
+  
+  #blurb {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Date Cards */
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: #4f46e5;
+  }
+  
+  .card p {
+    margin-bottom: 0.5rem;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7fafc;
+  }
+  
+  h1 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  #savedCocktails {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cocktail {
+    margin-bottom: 20px;
+  }
+  
+  .cocktail-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  .cocktail-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cocktail-instructions {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .cocktail-ingredients {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+  }

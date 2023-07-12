@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./Assets/css/style.css">
+
     <link rel="stylesheet" href="./Assets/css/results.css">
+
     <title>Document</title>
 </head>
 
@@ -24,17 +26,29 @@
         </div>
         <div id="cocktails">
             <h2>Cocktail Cheffin' Dates</h2>
-            <div id="cocktail-dates"></div>
+            <div id="savedCocktails"></div>
         </div>
         <div id="movies">
             <h2>Movie Dates</h2>
             <div id="movie-dates"></div>
         </div>
+        <div id="dinner">
+            <h2>Dinner Cheffin' Dates</h2>
+            <div id="savedDinner"></div>
+        </div>
+
     </section>
+    <script src="Assets/js/saved-cocktails.js"></script>
+    <script src="Assets/js/save-dinner.js"></script>
+    <script>
+        updateSavedCocktails();
+        updateSavedDinners();
+    </script>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAELLLRlHlybGtB7QWBnN8G11d5vWc1eUA&libraries=places">
 </script>
 <script src="./Assets/js/confetti.js"></script>
 <script src="./Assets/js/results.js"></script>
+
 
 </html>

@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const ingredientInput = document.getElementById('ingredientInput');
   const recommendButton = document.getElementById('recommendButton');
   const resultSection = document.getElementById('resultSection');
   const recipeResults = document.getElementById('recipeResults');
 
   recommendButton.addEventListener('click', function() {
+    const ingredientInput = document.getElementById('ingredientInput');
     const ingredients = ingredientInput.value.split(',').map(function(ingredient) {
       return ingredient.trim();
     });
@@ -71,5 +71,55 @@ function createRecipeCard(recipe) {
 
   card_4dinner.appendChild(cardContent_4dinner);
 
+  const saveButton = document.createElement('button');
+  saveButton.textContent = 'Save Dinner';
+  saveButton.addEventListener('click', function() {
+    saveDinner(recipe);
+  });
+
+  card_4dinner.appendChild(saveButton);
+
+  startConfetti()
+    setTimeout(() => {
+        stopConfetti()
+    }, 2000);
+  
+
   return card_4dinner;
+}
+
+function saveDinner(recipe) {
+  var savedDinners = getSavedDinners();
+
+  if (!savedDinners.some(savedRecipe => savedRecipe.id === recipe.id)) {
+    savedDinners.push(recipe);
+    localStorage.setItem('savedDinners', JSON.stringify(savedDinners));
+    alert('Dinner saved successfully!');
+    updateSavedDinners();
+  } else {
+    alert('Dinner already saved!');
+  }
+}
+
+function updateSavedDinners() {
+  var savedDinnersContainer = document.getElementById('savedDinner');
+  savedDinnersContainer.innerHTML = '';
+
+  var savedDinners = getSavedDinners();
+  if (savedDinners.length === 0) {
+    savedDinnersContainer.innerHTML = '<p>No saved dinners found.</p>';
+  } else {
+    savedDinners.forEach(function(recipe) {
+      var recipeCard = createRecipeCard(recipe);
+      savedDinnersContainer.appendChild(recipeCard);
+    });
+  }
+}
+
+function getSavedDinners() {
+  var savedDinners = localStorage.getItem('savedDinners');
+  if (savedDinners) {
+    return JSON.parse(savedDinners);
+  }
+  return [];
 }

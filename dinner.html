@@ -12,9 +12,22 @@
     <header>
       <h1 class="text-3xl font-bold mb-4">Dinner Recommendation</h1>
     </header>
+    <div id="saved-div">
+      <button id="to-do" type="button" data-te-ripple-init data-te-ripple-color="light"
+        class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+        See your Saved Dinner
+      </button>
+  
+      <script>
+        var savedDinnerButton = document.getElementById('to-do');
+        savedDinnerButton.addEventListener('click', function () {
+            window.location.href = 'to-do.html'; 
+        });
+      </script>
 
     <section class="py-8">
       <h2 class="text-2xl font-bold mb-4">Enter the ingredients you have:</h2>
+
       <div class="flex flex-wrap">
         <div class="w-full">
           <input id="ingredientInput" class="w-full py-2 px-4 border border-gray-400 rounded mb-4" type="text" placeholder="Enter ingredients separated by commas">
@@ -31,5 +44,7 @@
   </div>
 
   <script src="Assets/js/dinner.js"></script>
+  <script src="Assets/js/saved-dinner.js"></script> 
+  <script src="Assets/js/confetti.js"></script>
 </body>
 </html>

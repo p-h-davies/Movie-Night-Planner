@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   var searchButton = document.getElementById('searchButton');
   searchButton.addEventListener('click', searchCocktails);
+
+ 
+  updateSavedCocktails();
 });
 
 function searchCocktails() {
@@ -114,12 +117,72 @@ function createCocktailDiv(cocktail) {
     cocktailIngredients.appendChild(listItem);
   }
 
+  var saveButton = document.createElement('button');
+  saveButton.textContent = 'Save Cocktail';
+  saveButton.addEventListener('click', function() {
+    saveCocktail(cocktail);
+  });
+
   cocktailDiv.appendChild(cocktailName);
   cocktailDiv.appendChild(cocktailImage);
   cocktailDiv.appendChild(cocktailInstructions);
   cocktailDiv.appendChild(cocktailIngredients);
+  cocktailDiv.appendChild(saveButton);
+
+  startConfetti()
+    setTimeout(() => {
+        stopConfetti()
+    }, 2000);
+
+
+    
 
   return cocktailDiv;
+}
+
+function saveCocktail(cocktail) {
+  var savedCocktails = getSavedCocktails();
+
+  
+  var existingCocktail = savedCocktails.find(function(savedCocktail) {
+    return savedCocktail.idDrink === cocktail.idDrink;
+  });
+
+  if (!existingCocktail) {
+    savedCocktails.push(cocktail);
+    localStorage.setItem('savedCocktails', JSON.stringify(savedCocktails));
+    alert('Cocktail saved successfully!');
+    updateSavedCocktails();
+  } else {
+    alert('Cocktail already saved!');
+  }
+}
+
+function updateSavedCocktails() {
+  var savedCocktailsContainer = document.getElementById('savedCocktails');
+  if (!savedCocktailsContainer) {
+    return;
+  }
+  savedCocktailsContainer.innerHTML = '';
+
+  var savedCocktails = getSavedCocktails();
+  if (savedCocktails.length === 0) {
+    savedCocktailsContainer.innerHTML = '<p>No saved cocktails found.</p>';
+  } else {
+    savedCocktails.forEach(function(cocktail) {
+      var cocktailDiv = createCocktailDiv(cocktail);
+      savedCocktailsContainer.appendChild(cocktailDiv);
+    });
+  }
+}
+
+
+function getSavedCocktails() {
+  var savedCocktails = localStorage.getItem('savedCocktails');
+  if (savedCocktails) {
+    return JSON.parse(savedCocktails);
+  }
+  return [];
 }
 
 function showError(message) {
