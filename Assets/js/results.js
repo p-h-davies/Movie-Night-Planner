@@ -7,7 +7,6 @@ function getDate() {
         responseArray = getResponse;
     }
 }
-
 getDate()
 
 function renderDate() {
@@ -17,7 +16,7 @@ function renderDate() {
     for (let index = 0; index < responseArray.length; index++) {
         const element = responseArray[index];
         var dateName = document.createElement('h3');
-        dateName.innerText = "Date: " + element.Name
+        dateName.innerText = element.Name
         var dateLocation = document.createElement('ul');
         dateLocation.innerText = "Address: " + element.Location;
         var dateRating = document.createElement('ul');

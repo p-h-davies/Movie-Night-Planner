@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const recommendButton = document.getElementById('recommendButton');
   const resultSection = document.getElementById('resultSection');
   const recipeResults = document.getElementById('recipeResults');
 
-  recommendButton.addEventListener('click', function() {
+  recommendButton.addEventListener('click', function () {
     const ingredientInput = document.getElementById('ingredientInput');
-    const ingredients = ingredientInput.value.split(',').map(function(ingredient) {
+    const ingredients = ingredientInput.value.split(',').map(function (ingredient) {
       return ingredient.trim();
     });
 
@@ -13,22 +13,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const apiUrl = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apiKey + '&ingredients=' + ingredients.join(',');
 
     fetch(apiUrl)
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         recipeResults.innerHTML = ''; // Clear previous results
 
         if (data.length > 0) {
-          data.forEach(function(recipe) {
+          data.forEach(function (recipe) {
             const recipeId = recipe.id;
             const recipeUrl = 'https://api.spoonacular.com/recipes/' + recipeId + '/information?apiKey=' + apiKey;
 
             fetch(recipeUrl)
-              .then(function(response) {
+              .then(function (response) {
                 return response.json();
               })
-              .then(function(recipeData) {
+              .then(function (recipeData) {
                 const recipeCard = createRecipeCard(recipeData);
                 recipeResults.appendChild(recipeCard);
               });
@@ -57,10 +57,10 @@ function createRecipeCard(recipe) {
 
   const title_4dinner = document.createElement('h3');
   title_4dinner.textContent = recipe.title;
-  cardContent_4dinner.appendChild(title_4dinner);
+  card_4dinner.appendChild(title_4dinner);
 
   const ingredients_4dinner = document.createElement('p');
-  ingredients_4dinner.textContent = 'Ingredients: ' + recipe.extendedIngredients.map(function(ingredient) {
+  ingredients_4dinner.textContent = 'Ingredients: ' + recipe.extendedIngredients.map(function (ingredient) {
     return ingredient.original;
   }).join(', ');
   cardContent_4dinner.appendChild(ingredients_4dinner);
@@ -73,17 +73,17 @@ function createRecipeCard(recipe) {
 
   const saveButton = document.createElement('button');
   saveButton.textContent = 'Save Dinner';
-  saveButton.addEventListener('click', function() {
+  saveButton.addEventListener('click', function () {
     saveDinner(recipe);
   });
 
   card_4dinner.appendChild(saveButton);
 
   startConfetti()
-    setTimeout(() => {
-        stopConfetti()
-    }, 2000);
-  
+  setTimeout(() => {
+    stopConfetti()
+  }, 2000);
+
 
   return card_4dinner;
 }
@@ -109,7 +109,7 @@ function updateSavedDinners() {
   if (savedDinners.length === 0) {
     savedDinnersContainer.innerHTML = '<p>No saved dinners found.</p>';
   } else {
-    savedDinners.forEach(function(recipe) {
+    savedDinners.forEach(function (recipe) {
       var recipeCard = createRecipeCard(recipe);
       savedDinnersContainer.appendChild(recipeCard);
     });
