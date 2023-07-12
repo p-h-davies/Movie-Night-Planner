@@ -284,10 +284,10 @@ function showResults() {
                             locationDisplay.innerText = "Location: " + location;
                             locationDisplay.classList.add("location-address")
                             var ratingDisplay = document.createElement('ul');
-                            ratingDisplay.innerText = "Rating= " + rating;
+                            ratingDisplay.innerText = "Rating: " + rating;
                             ratingDisplay.classList.add("location-rating")
                             var priceDisplay = document.createElement('ul');
-                            priceDisplay.innerText = "Price: 1-5 (1 being most affordable)= " + price;
+                            priceDisplay.innerText = "Price: (1-5, 1 being most affordable): " + price;
                             priceDisplay.classList.add("location-price")
                             var imgDiv = document.createElement('div');
                             imgDiv.classList.add("img-div")
@@ -375,3 +375,8 @@ toDoStore.addEventListener("click", function () {
     document.location = "./To-Do.html";
 });
 
+
+//file names
+//notify of button click
+//don't allow location field to go through without data
+//fix location position
