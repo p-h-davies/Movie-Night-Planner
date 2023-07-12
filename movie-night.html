@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Night</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -12,46 +12,88 @@
     <link href="Assets/css/design.css" rel="stylesheet" type="text/css">
     <link href="Assets/css/media.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
     <main>
 
-        <button id="btnModal" onclick="watchMovies()">Movies</button>
+     <h1>Plan Your Movie Night</h1>
+     <div class="movie-congrats">
+        <h2>Congratulations! Your Movie night is: Let's watch movie together</h2>
+     </div>
+<div class="movie-shows">
+    <h3>Explore a world of movies experiences! Where you're looking for family fun, We've listed the best movies at below</h3>
+</div>
+<div class="btn-result">
+    <button>See Your saved dates</button>
+</div>
 
-        <!-- The Modal for movie selection of movies which type of you want -->
-        <div id="movieModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close movieModalClose">&times;</span>
+<div class="movie-show-data">
 
-                <div class="movie-night-items">
-                    <h2>What sounds best to you?</h2>
-                    <!-- <span class="movie-night movie-night-1">Welcome</span>
-                    <span class="movie-night movie-night-2">To</span>
-                    <span class="movie-night movie-night-3">Movie</span>
-                    <span class="movie-night movie-night-4">Night</span> -->
-                </div>
-                <div class="input-group">
-                    <input type="radio" value="adventureMovie" name="movieCategory">
-                    <label>Hiding underneath a blanket together</label>
-                </div>
-                <div class="input-group">
-                    <input type="radio" value="entertainmentMovie" name="movieCategory">
-                    <label>Comedy hour</label>
-                </div>
-                <div class="input-group">
-                    <input type="radio" value="westernMovies" name="movieCategory">
-                    <label>A blast from the past</label>
-                </div>
-                <div class="input-group">
-                    <input type="radio" value="suspenseMovie" name="movieCategory">
-                    <label>Playing Detective</label>
-                </div>
 
+<!-- movie category show -->
+<div class="movie-category">
+     
+      <div id="movieData" >
+
+            <div class="movie-night-items">
+                <h2>What sounds best to you?</h2>
+              
+            </div>
+            <div class="input-group-text">
+                <label>Hiding underneath a blanket together</label>
+                <input type="radio" value="adventureMovie" name="movieCategory" checked>
+               
+            </div>
+            <div class="input-group-text">
+                <label>Comedy hour</label>
+                <input type="radio" value="entertainmentMovie" name="movieCategory">
+               
+            </div>
+            <div class="input-group-text">
+                <label>A blast from the past</label>
+                <input type="radio" value="westernMovies" name="movieCategory">
+                
+            </div>
+            <div class="input-group-text">
+                <label>Playing Detective</label>
+                <input type="radio" value="suspenseMovie" name="movieCategory">
+              
             </div>
 
-        </div>
+    </div>
+    </div>
+    <!-- Movies show -->
+<div class="movie-show-items">
+	<!-- <div class="movie-list"> -->
+
+		<!-- <div class="movie_card">
+		  <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX380_CR0,1,380,562_.jpg">
+		  <div class="movie-body">
+            <div class="play-trailer">
+		  	<i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+		  	</i>
+            </div>
+		    <h5 class="movie-title">POKEMON Detective Pikachu</h5>
+            <div class="movie-year">
+                <span class="movie_info">2019</span>
+                <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+            </div>
+            <div class="movie-save">
+                <button>Save movie</button>
+            </div>
+		   		
+		  </div>
+		</div> -->
+	</div>
+  
+  
+  
+		</div>	
+</div>
+
+      
+        <!-- The Modal for movie selection of movies which type of you want -->
+     
 
 
         <!-- Trailer show Modal -->
@@ -67,19 +109,10 @@
         </div>
 
 
-        <!-- Show previous Movie trailer   -->
-        <div class="movie-store-random">
-            <div class="movie-storage">
-                <h3> Watched List</h3>
-                <ol>
-
-                </ol>
-            </div>
-            <div class="movie-show"></div>
-        </div>
+       
     </main>
 </body>
-<script src="Assets/js/scriptName.js"></script>
+<script src="Assets/js/movie.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>

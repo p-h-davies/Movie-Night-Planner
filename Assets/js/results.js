@@ -57,3 +57,48 @@ function renderDate() {
 }
 
 renderDate()
+
+
+
+
+
+//for movie
+let movieDates=document.querySelector("#movie-dates")
+
+function displayStorageData(){
+
+    movieDates.innerHTML=""
+let readDataList=JSON.parse(localStorage.getItem("readList")) ?? {}
+for(let key in readDataList){
+   
+    movieDates.innerHTML+= `<div class="movie-data-list">
+    <h5 class="movie-save-title">${readDataList[key][0]}</h5>
+    <div class="movie_save_card">
+        <img
+            src="${readDataList[key][1]}">
+        
+        </div>    <button class="btn-delete" onclick="deleteWatchList('${key}')">Delete</button>
+   
+</div>`
+}
+}
+displayStorageData()
+
+
+function deleteWatchList(id){
+
+let readDataList=JSON.parse(localStorage.getItem("readList")) ?? {}    
+delete readDataList[id] ;
+
+localStorage.setItem("readList",JSON.stringify(readDataList))
+displayStorageData()
+$.toast({
+            text: "data has been deleted!!",
+            icon: 'error',
+       
+            position: 'top-center',
+            hideAfter: 2000,
+                   showHideTransition: 'slide'
+        })
+}
+
