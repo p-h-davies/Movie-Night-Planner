@@ -254,6 +254,10 @@ body {
 
 /* Go Out Results */
 
+.full-body {
+    height: 100%
+}
+
 #result-title-display {
     display: flex;
     justify-content: center;

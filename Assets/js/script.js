@@ -21,6 +21,7 @@ let titleName = document.querySelector("#result-title-display")
 let savedDatesBtn = document.querySelector("#saved-div")
 let toDo = document.querySelector("#to-do")
 let dateStore = document.querySelector("#out-dates")
+let bodyEl = document.querySelector("#body")
 
 
 //Start Page Display
@@ -197,6 +198,7 @@ function end() {
 let responseArray = []
 
 function showResults() {
+    bodyEl.classList.add("full-body");
     titleName.style.display = 'flex';
     resultsEl.style.display = 'inline';
     toDo.classList.add("button-end")

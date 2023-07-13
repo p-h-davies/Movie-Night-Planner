@@ -3,6 +3,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f7fafc;
+  height: 100%
 }
 
 
@@ -27,19 +28,39 @@ section {
 }
 
 .uk-tab-bottom {
-  display: flex
+  display: flex;
+  top: 70px;
+  position: relative;
 }
 
 .link {
   margin: 0px 50px;
 }
 
-.link ::selection {
+.link :hover {
   color: #4f46ec
 }
 
 /* 'Go Out' Dates */
 
+#dates {
+  position: relative;
+  top: 70px;
+}
+
+#to-do {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+  padding: 10px 20px;
+  background-color: #4f46ec;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+}
 
 #out-title,
 #movie-title,
