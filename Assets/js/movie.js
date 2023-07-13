@@ -1,7 +1,16 @@
+
+//Confetti
+startConfetti()
+setTimeout(() => {
+    stopConfetti()
+}, 2000);
+
+
+
 //Button click To do List
-let resultList=document.querySelector(".btn-result button");
-resultList.addEventListener("click",()=>{
-    window.location.href="./To-Do.html";
+let resultList = document.querySelector(".btn-result button");
+resultList.addEventListener("click", () => {
+    window.location.href = "./To-Do.html";
 })
 
 
@@ -44,15 +53,15 @@ let watchMovies = (mtype = '') => {
 
 
     //category movies according to type of movie
-   
+
     const response = fetch(url, options).then(res => res.json()).then(data => {
-      
+
         var currentMovieType = allMoviesCategory[mtype];
-      
+
         movieDisplay.innerHTML = "";
         var i = 1;
         data.forEach(element => {
-       
+
             var checkStatus = false;
             element.genre.forEach((content) => {
                 if (currentMovieType.includes(content)) {
@@ -63,9 +72,9 @@ let watchMovies = (mtype = '') => {
             })
             if (checkStatus & i <= totData) {
 
-               
 
-             
+
+
                 movieDisplay.innerHTML += `<div class="movie-list">	<div class="movie_card">
                 <img src="${element.image}" alt="${element.title}" title="${element.title}" >
                 <div class="movie-body">
@@ -85,12 +94,12 @@ let watchMovies = (mtype = '') => {
                 </div>
               </div>
               </div>`
-                
+
                 i++;
 
             }
 
-  
+
             checkStatus = false;
 
 
@@ -115,9 +124,9 @@ function trailerWatch(index) {
     const response = fetch(url, options).then(res => res.json()).then(data => {
         movieTrailer.innerHTML = ""
         data.forEach(element => {
-      
+
             if (element.trailer == index) {
-                
+
                 movieTrailer.style.display = "block"
 
 
@@ -130,7 +139,7 @@ function trailerWatch(index) {
                           <div class="modal-body"><iframe src="${element.trailer}"></iframe></div>
              </div>`
 
-               
+
             }
 
 
@@ -142,10 +151,10 @@ function trailerWatch(index) {
 // Get the modal for when user watch movie Tralier 
 let movieTrailers = document.querySelector("#movieTrailerModal");
 function movieTrailerClose() {
-    
+
     // Get the <span> element that closes the modal
     let movieTrailerCloseBtn = document.querySelector(".movieTrailerClose");
-    
+
     // When the user clicks on <span> (x), close the modal
     movieTrailerCloseBtn.addEventListener("click", () => {
 
@@ -165,33 +174,33 @@ function movieTrailerClose() {
 
 //movie save when user click on save button
 let movieGetLocalStorage, finalData;
-function movieSave(currentId){
-    let oldReadData=JSON.parse(localStorage.getItem('readList')) ?? {}
-     
-     if(currentId in oldReadData){
-         var msg='Movie already in your watchlist!'
-     }else{
+function movieSave(currentId) {
+    let oldReadData = JSON.parse(localStorage.getItem('readList')) ?? {}
+
+    if (currentId in oldReadData) {
+        var msg = 'Movie already in your watchlist!'
+    } else {
         const response = fetch(url, options).then(res => res.json()).then(data => {
-            let currentData=data.filter((v)=>v.id==currentId)
-          
-           oldReadData[currentId]=[currentData[0].title,currentData[0].image]
-           localStorage.setItem("readList" ,JSON.stringify(oldReadData))
-         })
-         var msg='congrats! Movie has been saved in your watchlist!'
-     }
-    
-   
+            let currentData = data.filter((v) => v.id == currentId)
+
+            oldReadData[currentId] = [currentData[0].title, currentData[0].image]
+            localStorage.setItem("readList", JSON.stringify(oldReadData))
+        })
+        var msg = 'congrats! Movie has been saved in your watchlist!'
+    }
+
+
     $.toast({
         text: msg,
         icon: 'info',
-       position: 'top-center',
+        position: 'top-center',
         hideAfter: 2000,
         showHideTransition: 'slide'
     })
-   
- 
+
+
 
 }
 //get data formlocal storage into to do page
-let movieDates=document.querySelector("#movie-dates")
+let movieDates = document.querySelector("#movie-dates")
 

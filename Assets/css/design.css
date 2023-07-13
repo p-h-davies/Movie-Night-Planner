@@ -5,255 +5,292 @@
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #f7fafc;
 }
 
 main {
     width: 100%;
 }
-main h1{
+
+main h1 {
     font-weight: bold;
     text-align: center;
-margin-bottom: 20px;
-color: #000000;
-display: flex;
-justify-content: center;
-font-size: 100px;
-margin-top: 100px;
+    margin-bottom: 20px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    margin-top: 100px;
 }
-.movie-congrats{
-text-align: center;
-padding: 50px;
-font-size: 1.5em;
-font-weight: bold;
-   top: 50px;
-}
-.movie-shows h3{
-text-align: center;
-margin-bottom: 10px;
-color: #585858;
-   padding: 40px 200px 0px 200px;
-line-height: 30px;
-}
-.btn-result{
-   margin: 40px auto 0px auto;
-display: table;
 
-} 
-.btn-result button{
-background-color: #4f46ec;
-color: #fff;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-text-align: center;
-padding: 10px 20px;
-text-transform: uppercase;
-box-shadow: 0px 0px 6px 0px #4f46ec;
+#congrats-title {
+    font-size: 23px;
 }
-.movie-show-data{
-display: flex;
-justify-content: space-between;
-margin-top: 60px;
-max-width: 1320px;
-margin:70px auto 50px auto;
+
+.movie-congrats {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    top: 50px;
 }
-.movie-category{
-flex-basis: 30%;
 
-background-color: #fff;
+#movieData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-padding: 20px;
+.movie-shows h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #585858;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.btn-result {
+    margin: 40px auto 0px auto;
+    display: table;
 
 }
-.movie-night-items{
-background:aliceblue;;
-}
-.movie-night-items h2{
-margin: 20px;
-text-align: center;
-}
-.input-group-text{
-background: white;
-width: 80%;
-margin-bottom: 15px;
-padding: 10px;
-font-size: 20px;
-font-weight: bold;
-word-spacing: 4px;
-border-radius: 10px;
-position: relative;
-background-color: aliceblue;
-display: flex;
-align-items: center;
-}
-.input-group-text input{
-position: absolute;
-right: 10px;
+
+.btn-result button {
+    background-color: #4f46ec;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 20px;
+    text-transform: uppercase;
 
 }
-.movie-show-items{
-flex-basis: 65%;
-display: flex;
-justify-content: space-between;
-gap: 1%;
-flex-wrap: wrap;
+
+.movie-show-data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    max-width: 1320px;
+    margin: 70px auto 50px auto;
+}
+
+.movie-category {
+    flex-basis: 30%;
+
+    padding: 20px;
 
 }
-.movie-list{
-flex-basis: 31%;
-background-color: #fff;
-margin-bottom: 20px;
+
+.movie-night-items {
+    background: #f7fafc;
+    margin: 20px;
 }
-.movie_card{
-width: 100%;
+
+.movie-night-items h2 {
+    margin: 20px;
+    text-align: center;
+    font-size: 21px;
+}
+
+.input-group-text {
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-weight: bold;
+    word-spacing: 4px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #585858;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.input-group-text input {
+    position: absolute;
+    right: 10px;
 
 }
-.movie_card img{
-width: 100%;
-height: 300px;
-display: block;
-}
-.play-trailer{
-background-color: #4f46ec;
- width: 50px;
-height: 50px;
-border-radius: 50%;
- font-size: 27px;
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-} 
-.movie-body{
-position: relative;
-padding: 10px 15px;
-}
-.play-trailer i{
-display: flex;
-color: #fff;
-justify-content: center;
-align-items: center;
-line-height: 50px;
+
+.movie-show-items {
+    flex-basis: 65%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
 }
-.movie-title{
-font-size: 20px;
-width: 80%;
-padding-top: 26px;
-width: 75%;
+
+.movie-list {
+    flex-basis: 31%;
+    background-color: #fff;
+    margin-bottom: 20px;
 }
-.movie-year{
-display: flex;
-justify-content: space-between;
-margin-top: 15px;
+
+.movie_card {
+    width: 100%;
 
 }
-.movie-year span{
-font-size: 15px;
+
+.movie_card img {
+    width: 100%;
+    height: 300px;
+    display: block;
 }
-.movie-save{
-display: table;
-margin: 20px auto 0px auto;
+
+.play-trailer {
+    background-color: #4f46ec;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 27px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: -90px;
 }
-.movie-save button{
-background-color: #4f46ec;
-color: #fff;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-text-align: center;
-padding: 10px 20px;
-text-transform: uppercase;
-box-shadow: 0px 0px 6px 0px #4f46ec;
+
+.movie-body {
+    position: relative;
+    padding: 10px 15px;
+}
+
+.play-trailer i {
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    line-height: 50px;
+
+}
+
+.movie-title {
+    font-size: 20px;
+    width: 80%;
+    padding-top: 26px;
+    width: 75%;
+}
+
+.movie-year {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+}
+
+.movie-year span {
+    font-size: 15px;
+}
+
+.movie-save {
+    display: table;
+    margin: 20px auto 0px auto;
+}
+
+.movie-save button {
+    background-color: #4f46ec;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin: 20px;
 }
 
 #movieTrailerModal {
-display: none;
-z-index: 1;
-position: fixed;
-padding-top: 100px;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-overflow: auto;
-background-color: rgb(0, 0, 0);
-background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 1;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 
 }
 
 #movieTrailerModal .modal-content {
-width: 40%;
-height: 400px;
-margin: auto;
-border: 5px solid #4f46ec !important;
+    width: 40%;
+    height: 400px;
+    margin: auto;
+    border: 5px solid #f7fafc !important;
     background-color: #fff;
+    padding: 20px;
 }
 
 #movieTrailerModal .modal-body {
-height: 80%;
-width: calc(100% - 10px);
-margin: auto;
+    height: 80%;
+    width: calc(100% - 10px);
+    margin: auto;
 }
 
 #movieTrailerModal .modal-body iframe {
-width: 100%;
-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #movieTrailerModal h5 {
-font-size: 30px;
-font-weight: bold;
-text-align: center;
-margin: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
 }
 
 #movieTrailerModal .modal-content {
 
-font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
 #movieTrailerModal .close {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background: rgba(0, 0, 0, 0.3);
-text-align: center;
-line-height: 40px;
-color: white;
-font-size: 28px;
-font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 #movieTrailerModal .close:hover,
 #movieTrailerModal .close:focus {
-color: #000;
-text-decoration: none;
-cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
 #movieTrailerModal .modal-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-padding: 0px 15px;
-height: 15%;
+    padding: 0px 15px;
+    height: 15%;
 }
 
 #movieTrailerModal .btn {
-width: 30px;
-height: 30px;
-border-radius: 50%;
-background: #cd2721;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #cd2721;
 }
 
 #movieTrailerModal .btn span {
-color: #fff;
-font-size: 30px;
+    color: #fff;
+    font-size: 30px;
 }
 
 
@@ -285,6 +322,7 @@ font-size: 30px;
     text-decoration: none;
     cursor: pointer;
 }
-.jq-icon-info{
+
+.jq-icon-info {
     background-color: #4f46ec !important;
 }
