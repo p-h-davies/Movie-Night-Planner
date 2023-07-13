@@ -31,7 +31,7 @@ This project has been deployed to GitHub Pages. To load the application, please 
 Alternatively, download the sources files to use this as a template.
 
 * [GitHub Repository]() https://github.com/p-h-davies/Movie-Night-Planner.git
-* [Deployed GitHub IO]https://p-h-davies.github.io/Movie-Night-Planner/
+
 
 If you wish to install install this application, you will need a text editor. I recommend Visual Studio Code. 
 
