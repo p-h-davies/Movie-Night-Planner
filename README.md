@@ -25,7 +25,7 @@ Cook dinner together
 As this has not been launched to an official https, you will need to enable a third party host to view all results. You can do this simply by clicking the button found here: https://cors-anywhere.herokuapp.com/corsdemo.
 
 
-This project has been deployed to GitHub Pages. To load the application, please follow this link: 
+This project has been deployed to GitHub Pages. To load the application, please follow this link: https://p-h-davies.github.io/Movie-Night-Planner/
 
 
 Alternatively, download the sources files to use this as a template.
