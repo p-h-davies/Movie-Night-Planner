@@ -7,34 +7,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="./Assets/css/results.css">
 
     <title>Your Saved Dates</title>
 </head>
 
 <body>
+
     <section>
         <h1 id="main-title">Your To Do List</h1>
         <p id="blurb">Below you'll find all of the date ideas that we've personally suggested for you. You can store
             them here by
             pressing the 'Save' button when being presented with date results.</p>
     </section>
+    <ul class="uk-tab-bottom" uk-tab>
+        <li><a class="link" href="#outside">'Go Out' Dates</a></li>
+        <li><a class="link" href="#movies">Movie Nights</a></li>
+        <li><a class="link" href="#cocktails">Cocktails</a></li>
+        <li><a class="link" href="#dinner">Dinner</a></li>
+    </ul>
+
     <section id="dates">
         <div id="outside">
             <h2 id="out-title">'Go Out' Dates</h2>
             <div class="out-dates" id="out-dates"></div>
         </div>
-        <div id="cocktails">
-            <h2>Cocktail Cheffin' Dates</h2>
-            <div id="savedCocktails"></div>
-        </div>
         <div id="movies">
-            <h2>Movie Dates</h2>
+            <h2 id="movie-title">Movie Dates</h2>
             <div id="movie-dates"></div>
         </div>
+        <div id="cocktails">
+            <h2 id="cocktail-title">Cocktail Cheffin' Dates</h2>
+            <div id="savedCocktails"></div>
+        </div>
         <div id="dinner">
-            <h2>Dinner Cheffin' Dates</h2>
+            <div id="dinner-title-container"></div>
+            <h2 id="dinner-title">Dinner Cheffin' Dates</h2>
             <div id="savedDinner"></div>
         </div>
 
