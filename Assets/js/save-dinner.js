@@ -21,10 +21,6 @@ function createRecipeCard(recipe) {
   const card_4dinner = document.createElement('div');
   card_4dinner.classList.add('card');
 
-  const title_4dinner = document.createElement('h3');
-  title_4dinner.textContent = recipe.title;
-  card_4dinner.appendChild(title_4dinner);
-
   const image_4dinner = document.createElement('img');
   image_4dinner.src = recipe.image;
   image_4dinner.alt = 'Recipe Image';
@@ -32,6 +28,10 @@ function createRecipeCard(recipe) {
 
   const cardContent_4dinner = document.createElement('div');
   cardContent_4dinner.classList.add('card-content');
+
+  const title_4dinner = document.createElement('h3');
+  title_4dinner.textContent = recipe.title;
+  card_4dinner.appendChild(title_4dinner);
 
   const ingredients_4dinner = document.createElement('p');
   ingredients_4dinner.textContent = 'Ingredients: ' + recipe.extendedIngredients.map(function (ingredient) {

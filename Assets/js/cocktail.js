@@ -1,8 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var searchButton = document.getElementById('searchButton');
   searchButton.addEventListener('click', searchCocktails);
 
- 
   updateSavedCocktails();
 });
 
@@ -14,17 +13,17 @@ function searchCocktails() {
     return;
   }
 
-  var searchIngredients = ingredients.split(',').map(function(ingredient) {
+  var searchIngredients = ingredients.split(',').map(function (ingredient) {
     return ingredient.trim().toLowerCase();
   });
 
   var API_URL = 'https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + searchIngredients.join(',');
 
   fetch(API_URL)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       var cocktailResults = document.getElementById('cocktailResults');
       cocktailResults.innerHTML = '';
 
@@ -39,18 +38,18 @@ function searchCocktails() {
         showError('No cocktails found with the provided ingredients. Please try another ingredient.');
         return;
       }
-      matchingCocktails.forEach(function(cocktail) {
+      matchingCocktails.forEach(function (cocktail) {
         getCocktailDetails(cocktail.idDrink);
       });
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.error('Error:', error);
       showError('An error occurred while searching for cocktails. Please try again later.');
     });
 }
 
 function filterCocktailsByIngredients(cocktails, ingredients) {
-  return cocktails.filter(function(cocktail) {
+  return cocktails.filter(function (cocktail) {
     for (var i = 1; i <= 15; i++) {
       var ingredient = cocktail['strIngredient' + i];
       if (!ingredient) {
@@ -69,14 +68,14 @@ function getCocktailDetails(cocktailId) {
   var API_URL = 'https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + cocktailId;
 
   fetch(API_URL)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       var cocktail = data.drinks[0];
       updateCocktailUI(cocktail);
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.error('Error:', error);
     });
 }
@@ -119,8 +118,8 @@ function createCocktailDiv(cocktail) {
 
   var saveButton = document.createElement('button');
   saveButton.textContent = 'Save Cocktail';
-  saveButton.addEventListener('click', function() {
-    saveCocktail(cocktail);
+  saveButton.addEventListener('click', function () {
+    saveCocktail(cocktail, saveButton);
   });
 
   cocktailDiv.appendChild(cocktailName);
@@ -129,33 +128,42 @@ function createCocktailDiv(cocktail) {
   cocktailDiv.appendChild(cocktailIngredients);
   cocktailDiv.appendChild(saveButton);
 
-  startConfetti()
-    setTimeout(() => {
-        stopConfetti()
-    }, 2000);
-
-
-    
+  startConfetti();
+  setTimeout(function () {
+    stopConfetti();
+  }, 2000);
 
   return cocktailDiv;
 }
 
-function saveCocktail(cocktail) {
+function saveCocktail(cocktail, result) {
   var savedCocktails = getSavedCocktails();
 
-  
-  var existingCocktail = savedCocktails.find(function(savedCocktail) {
+  var existingCocktail = savedCocktails.find(function (savedCocktail) {
     return savedCocktail.idDrink === cocktail.idDrink;
   });
 
   if (!existingCocktail) {
     savedCocktails.push(cocktail);
     localStorage.setItem('savedCocktails', JSON.stringify(savedCocktails));
-    alert('Cocktail saved successfully!');
+    displayMessage('Cocktail saved successfully!', result);
     updateSavedCocktails();
   } else {
-    alert('Cocktail already saved!');
+    displayMessage('Cocktail already saved!', result);
   }
+}
+
+function displayMessage(message, result) {
+  var messageContainer = document.createElement('div');
+  messageContainer.className = 'message-container';
+  messageContainer.textContent = message;
+
+  var resultContainer = result.closest('.cocktail');
+  resultContainer.appendChild(messageContainer);
+
+  setTimeout(function () {
+    messageContainer.remove();
+  }, 3000);
 }
 
 function updateSavedCocktails() {
@@ -169,13 +177,12 @@ function updateSavedCocktails() {
   if (savedCocktails.length === 0) {
     savedCocktailsContainer.innerHTML = '<p>No saved cocktails found.</p>';
   } else {
-    savedCocktails.forEach(function(cocktail) {
+    savedCocktails.forEach(function (cocktail) {
       var cocktailDiv = createCocktailDiv(cocktail);
       savedCocktailsContainer.appendChild(cocktailDiv);
     });
   }
 }
-
 
 function getSavedCocktails() {
   var savedCocktails = localStorage.getItem('savedCocktails');
