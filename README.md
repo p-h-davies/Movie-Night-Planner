@@ -30,7 +30,7 @@ This project has been deployed to GitHub Pages. To load the application, please 
 
 Alternatively, download the sources files to use this as a template.
 
-* [GitHub Repository]()
+* [GitHub Repository]() https://github.com/p-h-davies/Movie-Night-Planner.git
 * [Deployed GitHub IO]
 
 If you wish to install install this application, you will need a text editor. I recommend Visual Studio Code. 
@@ -98,7 +98,9 @@ To install this code, download the zip file, or use GitHub's guidelines to clone
 * max-width: 567px
     * Adjusts body and container width
     * Adjusts buttons to be centered and stacked# Movie-Night-Planner
+<<<<<<< HEAD
 
 
 ### Credit:
 Confetti.js was provided by https://www.cssscript.com/confetti-falling-animation/.
+=======
