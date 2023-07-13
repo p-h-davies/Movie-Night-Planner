@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #f7fafc;
-    height: 100vh;
+    height: 100%;
 }
 
 #h1 {
