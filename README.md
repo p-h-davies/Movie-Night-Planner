@@ -2,7 +2,8 @@
 
 
 # User story 
-This is a Evening Fun Night  using HTML, CSS, and Javascript. In Movie Night Planner, User can watch the movie according to their choice because i have made different categories.When he/she click on that category,can see a lot of movies . Then he/she can click on choice movie, can watch trailer , then data will be saved  and next time when he/she visit , they can see history what they watched it before .Atatched screenshot in every step at below.
+ This is day night planner where user can explore cafe , park, adventures, movies, cocktails , dinner etc for their entertainment . When the user come to the portal ,there are two options where the can select 'Go Out' and 'Stay In'. In the Go Out Section, they can explore the places according to their taste and budget, they can go for adventures, for hang out and different places.In the Stay in section, they can find three options where they can choose between Movie Night, Cocktail Night, Dinner Night. In the Movie night, they are different categories of movies,they can decide watch Trailer. In The Cocktail Night, User can choose cocktail according to their taste and availabilty of ingredients ,they have .In the Dinner Night, User could find varieties of meals by selecting ingredients of their taste. Last but not the least is that we have provided the facilitate to the user by save their selection in the to-do-list. Upon their next visit, theu could find their previous selection.
+
 
 
 
@@ -22,33 +23,60 @@ To install this application, you will need a text editor. I recommend Visual Stu
 To install this code, download the zip file, or use GitHub's guidelines to clone the repository. 
 
 * Demo
-![Alt text](movie-maker.gif)
+![Alt text](screenshot/day-night.gif)
 
-### This project (Movie Night) has the following features: 
-* A Movie Night button 
-    * it will show up page when user can see 'Movie' Button 
-![](screenshot/pagePopUp.png)
+### This project (day night) has the following features: 
+
+* At Adventure time
+  *can get experience to go adventure places
+ 
+* spend time with each other
+   ** can enjoy and fun at resturant, parks bars etc
+ ![](screenshot/7-1.png)
 
 
-*  click on that button ,show up modal for different categories of movies
-  ![](screenshot/categoryMovie.png)
+* Day time hang with friends and family members
+ ** can visit differnet places and bars
+ ![](screenshot/7-1.png)
+
+* At Cocktail Night
+    * use can serach cocktails according to thei ingredients ,they have
+![](screenshot/12.png)
+
+    *  user can search more than one ingredients to make cocktail tasty
+    ![](screenshot/16.png)
+
+
+* At Movie Night  
+    * different categories for selecting accodring to their choice
+![](screenshot/9.png)
+
+
+*  click on play button ,make a wonderfull night to watch trailer 
+  ![](screenshot/10.png)
    
-
-* can see a lot of movies according to  selection
-![](screenshot/movielist.png)
-
-* after click any movie , can watch trailer
-![](screenshot/trailer.png)
+* make their to-do-list for save their selection what ever they like
+![](screenshot/11.png)
 
 
-* Data will be stored into local storage
- ** next visit, can See history , what he/she already watched
+* At  Dinner Night utton 
+    * use can serach meals according to their ingredients ,they have
+![](screenshot/14.png)
+
+    *  user can search more than one ingredients to make meals yummy
+    ![](screenshot/17.png)
+
+* make their to-do-list for save their selection by clicking save button what ever they like
+
+
+
+
+*whole  Data will be stored into one place 
+ ** next visit, can See history , what he/she has done it
 
  ![](screenshot/pagePopUp.png)
 
-* Lastly In Movie planner, can delete history
-  ** message will show up
-  ![](screenshot/delete.png)
+
     
 
 
