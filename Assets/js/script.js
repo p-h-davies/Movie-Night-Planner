@@ -325,6 +325,12 @@ function showResults() {
                                 responseArray.push(responses)
                                 localStorage.setItem("responses", JSON.stringify(responseArray));
                                 console.log(responseArray)
+                                UIkit.notification({
+                                    message: 'Date Location Saved!',
+                                    status: 'primary',
+                                    pos: 'top-right',
+                                    timeout: 5000
+                                });
                             })
                         }
                     });
